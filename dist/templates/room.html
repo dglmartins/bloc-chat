@@ -1,0 +1,7 @@
+<section class="room-nav clearfix" ng-controller="RoomCtrl as roomctrl">
+	<table class="room-list"> 
+		<tr class="room-item" ng-repeat="rooms in roomctrl.room.all">
+			<td>{{ rooms }}</td>
+		</tr>
+	</table>
+</section>

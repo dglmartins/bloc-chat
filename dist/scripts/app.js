@@ -8,8 +8,8 @@
 		
 		$stateProvider
 			.state('chat', {
-				url: '/',
-				templateUrl: '/templates/chat.html'
+			url: '/',
+			templateUrl: '/templates/main.html'
 			
 		});
 		
