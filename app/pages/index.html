@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="blocChat">
 <head lang="en">
     <meta charset="UTF-8">
     <title>Bloc Chat Project</title>
@@ -9,6 +9,24 @@
 	<link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
-    <script src="/scripts/app.js"></script>
+    <nav class="navbar"></nav>
+	<ui-view></ui-view>
+	
+	<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+		var config = {
+		apiKey: "AIzaSyDnQyOT8i8hjO5qPO92QU81KqKcyIA3Y94",
+		authDomain: "bloc-chat-95e3e.firebaseapp.com",
+		databaseURL: "https://bloc-chat-95e3e.firebaseio.com",
+		storageBucket: "bloc-chat-95e3e.appspot.com",
+		messagingSenderId: "26250735913"
+	  	};
+	firebase.initializeApp(config);
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+	<script src="/scripts/app.js"></script>
 </body>
 </html>
