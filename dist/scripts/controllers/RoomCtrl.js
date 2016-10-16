@@ -19,6 +19,7 @@
 				function showText() {
 					RoomView.dynamicCss($scope, $window);
 				}
+			
 		});
 		
 		

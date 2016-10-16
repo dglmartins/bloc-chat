@@ -2,7 +2,7 @@
 	position: absolute;
 	float: left;
 	width: 30%;
-	background-color: #eeeeee;
+	background-color: #eee;
 	height: 100%;
 	font-size: 1em;
 	max-width: 210px;
@@ -52,6 +52,19 @@
 .room-item td{
 	text-align: center;
 	padding-bottom: 0.5em;
+	
+}
+
+.arrow-icon {
+	display: none;
+	position: absolute;
+	top: 50%;
+	height: 45px;
+	width: 45px;
+	background-image: url(../assets/images/arrow-right.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
 	
 }
 
