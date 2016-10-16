@@ -15,7 +15,7 @@
 		
 		angular.element($window).bind('resize', function () {
     		RoomView.dynamicCss($scope, $window);
-			var delay = setTimeout(showText, 300);
+			var delay = setTimeout(showText, 200);
 				function showText() {
 					RoomView.dynamicCss($scope, $window);
 				}

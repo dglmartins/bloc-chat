@@ -1,14 +1,13 @@
 .room-nav {
 	position: absolute;
 	float: left;
-	width: 30%;
+	width: 210px;
 	background-color: #eee;
 	height: 100%;
 	font-size: 1em;
-	max-width: 210px;
-	-webkit-transition: all 0.2s ease-in-out;
-	-moz-transition: all 0.2s ease-in-out;
-	transition: all 0.3s;
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	transition: all 0.1s;
 	
 	
 }
