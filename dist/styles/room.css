@@ -5,8 +5,12 @@
 	background-color: #eeeeee;
 	height: 100%;
 	font-size: 1em;
-	max-width: 300px;
-	min-width: 210px;
+	max-width: 210px;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	transition: all 0.3s;
+	
+	
 }
 
 .sidebar-title {
@@ -38,7 +42,6 @@
 }
 
 
-
 .room-list {
 	position: relative;
 	width: 100%;
@@ -51,3 +54,4 @@
 	padding-bottom: 0.5em;
 	
 }
+
