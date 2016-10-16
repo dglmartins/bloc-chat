@@ -1,0 +1,53 @@
+.room-nav {
+	position: absolute;
+	float: left;
+	width: 30%;
+	background-color: #eeeeee;
+	height: 100%;
+	font-size: 1em;
+	max-width: 300px;
+	min-width: 210px;
+}
+
+.sidebar-title {
+	position: relative;
+	width: 100%;
+	text-align: center;
+	font-size: 1em;
+	color: white;
+	background-color: cornflowerblue;
+	overflow: auto;
+	margin-bottom: 1em;
+
+}
+
+.button {
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	height: 2em;
+	line-height: 2em;
+	width: 50%;
+	margin-left: 25%;
+	margin-right: 25%;
+	cursor: pointer;
+	background-color: darkblue;
+	color: white;
+	
+	
+}
+
+
+
+.room-list {
+	position: relative;
+	width: 100%;
+	padding-top: 1em;
+	
+}
+
+.room-item td{
+	text-align: center;
+	padding-bottom: 0.5em;
+	
+}
