@@ -2,6 +2,7 @@
  	function RoomCtrl($scope, $window, Room, RoomView) {
 		
 		this.room = Room;
+		
 		this.roomView = RoomView;
 		//this.viewWidth = RoomView.width;
 		//console.log(this.viewWidth);

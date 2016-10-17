@@ -3,14 +3,19 @@
 		<div class="sidebar-title">
 			<h1>Bloc Chat</h1>
 		</div>
-
-		<div class="button">Create Room</div>	
-
-		<table class="room-list"> 
-			<tr class="room-item" ng-repeat="rooms in roomctrl.room.all">
-				<td>{{ rooms }}</td>
-			</tr>
-		</table>
+		
+		<div class="button" ng-controller="ModalCtrl as modal" ng-click="modal.open()">Create Room</div>
+		
+		<div class="open-rooms-title">Currently Open Rooms</div>
+	
+		<section class="table-container">
+			<table class="room-list"> 
+				<tr class="room-item" ng-repeat="rooms in roomctrl.room.all">
+					<td>{{ rooms.$value }}</td>
+				</tr>
+			</table>
+			
+		</section>
 		<div class="arrow-icon"></div>
 
 	</section>	

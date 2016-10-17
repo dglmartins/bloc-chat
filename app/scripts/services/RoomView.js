@@ -8,13 +8,15 @@
 			$scope.sidebar = document.getElementsByClassName("room-nav");
 			$scope.title = document.getElementsByClassName("sidebar-title");
 			$scope.button = document.getElementsByClassName("button");
-			$scope.table = document.getElementsByClassName("room-list");
+			$scope.table = document.getElementsByClassName("table-container");
+			$scope.openRooms = document.getElementsByClassName("open-rooms-title");
 			$scope.arrowIcon = document.getElementsByClassName("arrow-icon");
 			if ($scope.width < 700) {
 				
 				$scope.title[0].style.display = "none";
 				$scope.button[0].style.display = "none";
 				$scope.table[0].style.display = "none";
+				$scope.openRooms[0].style.display = "none";
 				
 				var delay = setTimeout(hide, 200);
 				function hide() {
@@ -25,6 +27,7 @@
 					$scope.title[0].style.display = "none";
 					$scope.button[0].style.display = "none";
 					$scope.table[0].style.display = "none";
+					$scope.openRooms[0].style.display = "none";
 				}
 			} else {
 				
@@ -36,6 +39,7 @@
 				function show() {
 					$scope.title[0].style.display = "block";
 					$scope.button[0].style.display = "block";
+					$scope.openRooms[0].style.display = "block";
 					$scope.table[0].style.display = "";
 					
 					
@@ -50,7 +54,8 @@
 			var sidebar = document.getElementsByClassName("room-nav");
 			var title = document.getElementsByClassName("sidebar-title");
 			var button = document.getElementsByClassName("button");
-			var table = document.getElementsByClassName("room-list");
+			var table = document.getElementsByClassName("table-container");
+			var openRooms = document.getElementsByClassName("open-rooms-title");
 			var arrowIcon = document.getElementsByClassName("arrow-icon");
 			
 			sidebar[0].style.width = "210px";
@@ -60,6 +65,7 @@
 				function showText() {
 					title[0].style.display = "block";
 					button[0].style.display = "block";
+					openRooms[0].style.display = "block";
 					table[0].style.display = "";
 					arrowIcon[0].style.display = "none";
 					
