@@ -1,0 +1,15 @@
+<section class="form-popup" ng-controller="ModalUsernameCtrl as modalUsername">
+	<div class="modal-header">
+		<h5 class="modal-title" id="modal-title">Set a username</h3>
+	</div>
+	<div class="modal-body" id="modal-body">
+		<form>
+			The name below will appear when you send a message<br>
+			<input type="text" ng-model="username"><br>
+		 </form>
+
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary" type="button" ng-click="modalUsername.close()">Set username</button>
+	</div>
+</section>

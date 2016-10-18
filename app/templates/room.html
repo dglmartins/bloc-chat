@@ -1,7 +1,8 @@
 <section ng-controller="RoomCtrl as roomctrl" class="overall-container">
 	
 	<div class="sidebar-title">
-			<p class="title-text">Bloc Chat</p>
+		<p class="title-text">Bloc Chat</p>
+		<p class="username-text" ng-controller="ModalUsernameCtrl as modal" ng-click="modal.open()">Change Screen Name</p>
 	</div>
 	
 	<section class="room-nav" ng-click="roomctrl.roomView.showSidebar()" ng-mouseleave="roomctrl.dynamicCss()">
