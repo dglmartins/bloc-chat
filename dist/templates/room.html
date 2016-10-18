@@ -1,17 +1,23 @@
-<section ng-controller="RoomCtrl as roomctrl" >
+<section ng-controller="RoomCtrl as roomctrl" class="overall-container">
+	
+	<div class="sidebar-title">
+			<p class="title-text">Bloc Chat</p>
+	</div>
+	
 	<section class="room-nav" ng-click="roomctrl.roomView.showSidebar()" ng-mouseleave="roomctrl.dynamicCss()">
-		<div class="sidebar-title">
-			<h1>Bloc Chat</h1>
+		
+		<div class="button-box">
+			<div class="button" ng-controller="ModalCtrl as modal" ng-click="modal.open()">New Room</div>
 		</div>
-		
-		<div class="button" ng-controller="ModalCtrl as modal" ng-click="modal.open()">Create Room</div>
-		
+			
+	
 		<div class="open-rooms-title">Currently Open Rooms</div>
 	
+		
 		<section class="table-container">
 			<table class="room-list"> 
 				<tr class="room-item" ng-repeat="rooms in roomctrl.room.all">
-					<td>{{ rooms.$value }}</td>
+					<td ng-click="roomctrl.activateRoom(rooms); roomctrl.getMessages(rooms.$id)">{{ rooms.$value }}</td>
 				</tr>
 			</table>
 			
@@ -20,6 +26,23 @@
 
 	</section>	
 
-	
+
+	<section class="active-room">
+		<div class="active-room-title"><p class="room-title-text">{{ roomctrl.activeRoom.$value }}</p></div>
+		<section class="message-table-container">
+			<table class="message-table" ng-repeat="message in roomctrl.messages">
+				<tr class="message-row">
+					<td class="message-username">{{ message.username }} says:</td>
+					<td class="message-time">{{ message.sentAt }}</td>
+				</tr>
+				<tr class="message-row">
+					<td colspan="2" class="message-cell">{{ message.content }}</td>
+				</tr>
+
+			</table>
+		</section>
+		
+	</section>
+
 
 </section>

@@ -1,38 +1,71 @@
-.room-nav {
+.overall-container {
 	position: absolute;
-	float: left;
-	width: 210px;
-	background-color: #f1f1f2;
+	width: 100%;
 	height: 100%;
+	overflow: auto;
+
+}
+
+.room-nav {
+	position: relative;
+	float: left;
+	overflow: auto;
+	width: 210px;
+	background-color: #66a5ad;
+	height: calc(100% - 4em);
+	padding: 0;
+	margin: 0;
 	font-size: 1em;
 	-webkit-transition: all 0.1s ease-in-out;
 	-moz-transition: all 0.1s ease-in-out;
-	transition: all 0.1s;
+	transition: all 0.1s ease-in-out;
 	
 	
 }
 
+.title-text {
+	font-size: 2em;
+}
+
 .sidebar-title {
+	box-sizing: border-box;
 	position: relative;
+	padding: 0 0 0 1em;
 	width: 100%;
-	text-align: center;
-	font-size: 1em;
+	text-align: left;
+	height: 4em;
+	line-height: 4em;
 	color: white;
 	background-color: #003B46;
-	overflow: auto;
-	margin-bottom: 1em;
+	
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
 
+}
+
+.button-box {
+	box-sizing: border-box;
+	position: relative;
+	height: 4em;
+	
+	width: 100%;
+	
+	margin: 0;
+	padding-top: 1em;
+	
 }
 
 .button {
 	position: relative;
-	display: inline-block;
+	font-size: 1em;
 	text-align: center;
 	height: 2em;
 	line-height: 2em;
-	width: 50%;
-	margin-left: 25%;
-	margin-right: 25%;
+	
+	width: 90%;
+	margin-left: 5%;
+
 	cursor: pointer;
 	background-color: #07575B;
 	color: white;
@@ -43,31 +76,40 @@
 .open-rooms-title {
 	height: 2em;
 	line-height: 2em;
-	margin-top: 0.8em;
-	font-size: 1.3em;
+
+	font-size: 1.1em;
 	background-color: #003B46;
 	color: white;
 	position: relative;
 	text-align: center;
+	width: 210px;
 }
 
 
 .table-container {
-	overflow: auto;
+	box-sizing: border-box;
+	
+	position: relative;
+	width: 210px;
+	height: calc(100%-10em);
+	padding-bottom: 2em;
+	overflow: scroll;
+	display: block;
+	background-color: #66a5ad;
+	
 }
 
 .room-list {
 	position: relative;
 	width: 100%;
 	padding: 0;
-	margin-top: 1em;
 	font-size: 1.5em;
 	
 	
 }
 
 .room-item {
-	line-height: 30px;
+	line-height: 1.5em;
 	color: #003b46;
 	margin-bottom: 0.5em;
 	cursor: pointer;
@@ -81,7 +123,8 @@
 	background-image: url(../assets/images/door.png);
 	background-repeat: no-repeat;
 	background-position: center left;
-	background-size: 30px 30px;
+	background-size: 1.7em 1.7em;
+
 	
 }
 
@@ -94,8 +137,8 @@
 	display: none;
 	position: absolute;
 	top: 50%;
-	height: 45px;
-	width: 45px;
+	height: 3.3em;
+	width: 3.3em;
 	background-image: url(../assets/images/arrow-right.png);
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -103,3 +146,88 @@
 	
 }
 
+.active-room {
+	background-color: #fcfdfe;
+	
+	position: absolute;
+	float: right;
+	width: 100%;
+	height: calc(100% - 4em);
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
+	
+	
+}
+
+.room-title-text {
+	font-size: 2em;
+	line-height:  2em;
+	height: 2em;
+}
+
+.active-room-title {
+	height: 4em;
+	position: relative;
+	color: #003b46;
+	background-color: #c4dfe6;
+	padding-left: 1em;
+	
+	
+}
+
+.message-table-container {
+	box-sizing: border-box;
+	position: relative;
+	width: 100%;
+	height: calc(100% - 10em);
+	padding-bottom: 0;
+	overflow: scroll;
+	display: block;
+}
+
+
+.message-table {
+	position: relative;
+	width: 100%;
+	padding: 0;
+	font-size: 1em;
+}
+
+.message-row {
+	
+	color: black;
+	
+
+}
+
+.message-username {
+	height: 1em;
+	padding-top: 0.2em;
+	padding-left: 0.2em;
+	vertical-align: top;
+	font-weight: 700;
+}
+
+.message-time {
+	padding-top: 0.5em;
+	padding-right: 0.5em;
+	
+	vertical-align: top;
+	font-weight: 300;
+	font-size: 0.7em;
+	text-align: right;
+}
+
+.message-cell {
+	height: 6em;
+	font-style: italic;
+	padding-top: 1em;
+	vertical-align: top;
+	overflow: scroll;
+}
+
+.message-row:nth-child(even) {
+	background-color: #f1f1f2;
+
+}

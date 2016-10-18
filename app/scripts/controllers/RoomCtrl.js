@@ -3,6 +3,10 @@
 		
 		this.room = Room;
 		
+		
+		
+		
+		
 		this.roomView = RoomView;
 		//this.viewWidth = RoomView.width;
 		//console.log(this.viewWidth);
@@ -22,6 +26,18 @@
 				}
 			
 		});
+		
+		
+		this.activateRoom = function(room) {
+			this.activeRoom = room;
+		};
+		
+		this.getMessages = function(roomId) {
+			this.messages = this.room.getMessages(roomId);
+			console.log(this.messages);
+			
+		};
+		
 		
 		
 	}
