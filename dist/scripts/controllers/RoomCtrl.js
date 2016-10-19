@@ -34,10 +34,14 @@
 			this.activeRoom = room;
 			this.roomSelected = true;
 			this.dynamicCss();
+			
 		};
 		
 		this.getMessages = function(roomId) {
 			this.messages = this.room.getMessages(roomId);
+		
+			RoomView.autoScrollMessages();
+		
 			
 		};
 		
@@ -49,6 +53,9 @@
 			var username = $cookies.get('blocChatCurrentUser');
 			this.message.send($scope.messageToSend, this.activeRoom.$id, dateTime, username);
 			$scope.messageToSend = "";
+			
+			RoomView.autoScrollMessages();
+			
 		};
 		
 		

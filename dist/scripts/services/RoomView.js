@@ -93,6 +93,15 @@
 			
 		};
 		
+		RoomView.autoScrollMessages = function() {
+			var delay = setTimeout(autoScroll, 400);
+			function autoScroll() {
+				var messageContainer = document.getElementsByClassName("message-table-container");
+				messageContainer[0].scrollTop = 	messageContainer[0].scrollHeight;
+			}
+			
+		};
+		
 		
 		
 		
