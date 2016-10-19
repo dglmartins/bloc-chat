@@ -29,8 +29,10 @@
 
 
 	<section class="active-room">
-		<div class="active-room-title"><p class="room-title-text">{{ roomctrl.activeRoom.$value }}</p></div>
-		<section class="message-table-container">
+		
+		<div class="logo-select-room" ng-show="!roomctrl.roomSelected"></div>
+		<div ng-show="roomctrl.roomSelected" class="active-room-title"><p class="room-title-text">{{ roomctrl.activeRoom.$value }}</p></div>
+		<section ng-show="roomctrl.roomSelected"  class="message-table-container">
 			<table class="message-table" ng-repeat="message in roomctrl.messages">
 				<tr class="message-row">
 					<td class="message-username">{{ message.username }} says:</td>
@@ -41,6 +43,11 @@
 				</tr>
 
 			</table>
+		</section>
+		
+		<section ng-show="roomctrl.roomSelected"  class="send-message-container">
+			<textarea class="message-field" rows="2" placeholder="Type your message here..." ng-model="messageToSend"></textarea>
+			<div class="submit-message" ng-click="roomctrl.sendMessage();"></div>
 		</section>
 		
 	</section>

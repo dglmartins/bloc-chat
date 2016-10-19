@@ -1,8 +1,10 @@
 (function() {
- 	function RoomCtrl($scope, $window, Room, RoomView) {
+ 	function RoomCtrl($scope, $window, Room, Message, RoomView, $cookies) {
+		
 		
 		this.room = Room;
-		
+		this.roomSelected = false;
+		this.message = Message;
 		
 		
 		
@@ -30,13 +32,24 @@
 		
 		this.activateRoom = function(room) {
 			this.activeRoom = room;
+			this.roomSelected = true;
 		};
 		
 		this.getMessages = function(roomId) {
 			this.messages = this.room.getMessages(roomId);
-			console.log(this.messages);
 			
 		};
+		
+		this.sendMessage = function() {
+			var d = new Date();
+			var time = d.toTimeString();
+			var day = d.toDateString();
+			var dateTime = time + "on " + day;
+			var username = $cookies.get('blocChatCurrentUser');
+			this.message.send($scope.messageToSend, this.activeRoom.$id, dateTime, username);
+			$scope.messageToSend = "";
+		};
+		
 		
 		
 		
@@ -44,6 +57,6 @@
  
  	angular
 		.module('blocChat')
-		.controller('RoomCtrl', ['$scope', '$window', 'Room','RoomView', RoomCtrl]);
+		.controller('RoomCtrl', ['$scope', '$window', 'Room','Message','RoomView', '$cookies', RoomCtrl]);
 	
  })();

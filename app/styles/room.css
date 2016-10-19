@@ -6,6 +6,48 @@
 
 }
 
+.sidebar-title {
+	box-sizing: border-box;
+
+	position: relative;
+	padding: 0 0 0 1em;
+	width: 100%;
+	text-align: left;
+	height: 4em;
+	line-height: 4em;
+	color: white;
+	background-color: #003B46;
+	
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
+
+}
+
+.title-text {
+	
+	height: inherit;
+	font-size: 2em;
+	position: relative;
+	width: 50%;
+	float: left;
+	margin: 0;
+}
+
+.username-text {
+	height: inherit;
+	text-align: right;
+	width:50%;
+	float: right;
+	
+	font-size: 0.8;
+	padding-right: 1em;
+	cursor: pointer;
+	margin: 0;
+
+
+}
+
 .room-nav {
 	position: absolute;
 	float: left;
@@ -23,48 +65,12 @@
 	
 }
 
-.title-text {
-	font-size: 2em;
-	position: relative;
-	width: 50%;
-	float: left;
-}
 
-.username-text {
-	text-align: right;
-	width:50%;
-	float: right;
-	
-	font-size: 0.8;
-	padding-right: 1em;
-	cursor: pointer;
-	margin: 0;
-
-
-}
-
-.sidebar-title {
-	box-sizing: border-box;
-	position: relative;
-	padding: 0 0 0 1em;
-	width: 100%;
-	text-align: left;
-	height: 4em;
-	line-height: 4em;
-	color: white;
-	background-color: #003B46;
-	
-	-webkit-transition: all 0.1s ease-in-out;
-	-moz-transition: all 0.1s ease-in-out;
-	transition: all 0.1s ease-in-out;
-
-}
 
 .button-box {
 	box-sizing: border-box;
 	position: relative;
 	height: 4em;
-	
 	
 	width: 100%;
 	
@@ -87,7 +93,6 @@
 	background-color: #07575B;
 	color: white;
 	
-	
 }
 
 .open-rooms-title {
@@ -99,21 +104,22 @@
 	color: white;
 	position: relative;
 	text-align: center;
-	width: 210px;
+	width: 100%;
 }
 
 
 .table-container {
 	box-sizing: border-box;
-	
 	position: relative;
 	width: 210px;
-	height: calc(100%-10em);
+	height: calc(100% - 6em);
+	background-color: #003B46;
 	padding-bottom: 2em;
+	overflow: hidden;	
+}
+
+.table-container:hover {
 	overflow: scroll;
-	display: block;
-	background-color: #66a5ad;
-	
 }
 
 .room-list {
@@ -121,6 +127,7 @@
 	width: 100%;
 	padding: 0;
 	font-size: 1.5em;
+
 	
 	
 }
@@ -128,14 +135,14 @@
 .room-item {
 	line-height: 1.5em;
 	color: #003b46;
-	margin-bottom: 0.5em;
+	
 	cursor: pointer;
 	background-color: #c4dfe6;
 }
 
 .room-item td{
 	text-align: center;
-	margin-bottom: 0.5em;
+
 	font-style: bold;
 	background-image: url(../assets/images/door.png);
 	background-repeat: no-repeat;
@@ -165,7 +172,6 @@
 
 .active-room {
 	background-color: #fcfdfe;
-	
 	position: absolute;
 	float: right;
 	width: 100%;
@@ -173,6 +179,7 @@
 	-webkit-transition: all 0.1s ease-in-out;
 	-moz-transition: all 0.1s ease-in-out;
 	transition: all 0.1s ease-in-out;
+	
 	
 	
 }
@@ -197,10 +204,26 @@
 	box-sizing: border-box;
 	position: relative;
 	width: 100%;
-	height: calc(100% - 10em);
+	height: calc(100% - 8em);
 	padding-bottom: 0;
-	overflow: scroll;
+	overflow: hidden;
 	display: block;
+}
+
+.message-table-container:hover {
+	overflow: scroll;
+}
+
+
+.logo-select-room {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	background-image: url(../assets/images/send.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	
 }
 
 
@@ -237,14 +260,47 @@
 }
 
 .message-cell {
-	height: 6em;
+	min-height: 6em;
 	font-style: italic;
 	padding-top: 1em;
 	vertical-align: top;
-	overflow: scroll;
 }
 
 .message-row:nth-child(even) {
 	background-color: #f1f1f2;
 
+}
+
+.send-message-container {
+	height: 4em;
+	
+	width: 100%;
+
+	
+}
+
+.message-field {
+	height: 4em;
+	font-size: 1em;
+	color: #003B46;
+	line-height: 2em;
+	width: calc(100% - 4em);
+	border: 0px;
+	background-color: #f1f1f2;
+	margin: 0;
+	float: left;
+	
+}
+
+.submit-message {
+	height: 4em;
+	width: 4em;
+	margin: 0;
+	float: right;
+	background-image: url(../assets/images/send.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-color: #c4dfe6;
+	
 }

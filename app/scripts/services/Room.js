@@ -27,7 +27,9 @@
 				if (roomExists) {
 					alert("This room already exists. Please try another name");
 				} else {
+					console.log(rooms);
 					rooms.$add(newRoom);
+					console.log(rooms);
 					$scope.$close();				
 				}
 				});
