@@ -115,12 +115,9 @@
 	height: calc(100% - 6em);
 	background-color: #003B46;
 	padding-bottom: 2em;
-	overflow: hidden;	
+	overflow: scroll;	
 }
 
-.table-container:hover {
-	overflow: scroll;
-}
 
 .room-list {
 	position: relative;
@@ -206,12 +203,8 @@
 	width: 100%;
 	height: calc(100% - 8em);
 	padding-bottom: 0;
-	overflow: hidden;
-	display: block;
-}
-
-.message-table-container:hover {
 	overflow: scroll;
+	display: block;
 }
 
 

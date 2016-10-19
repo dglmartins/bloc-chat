@@ -14,16 +14,17 @@
 			$scope.activeRoom = document.getElementsByClassName("active-room");
 			if ($scope.width < 700) {
 				
-				$scope.title[0].style.left = "45px";
-				$scope.title[0].style.width = "calc(100% - 45px)";
-				
 				$scope.button[0].style.display = "none";
 				$scope.table[0].style.display = "none";
 				$scope.openRooms[0].style.display = "none";
+				$scope.title[0].style.left = "45px";
+				$scope.title[0].style.width = "calc(100% - 45px)";
+				
+				
 				$scope.activeRoom[0].style.left = "45px";
 				$scope.activeRoom[0].style.width = "calc(100% - 45px)";
 				
-				var delay = setTimeout(hide, 200);
+				var delay = setTimeout(hide, 300);
 				function hide() {
 					$scope.sidebar[0].style.width = "45px";
 					$scope.sidebar[0].style.cursor = "pointer";

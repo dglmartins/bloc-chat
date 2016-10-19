@@ -33,6 +33,7 @@
 		this.activateRoom = function(room) {
 			this.activeRoom = room;
 			this.roomSelected = true;
+			this.dynamicCss();
 		};
 		
 		this.getMessages = function(roomId) {

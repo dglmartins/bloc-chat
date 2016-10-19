@@ -5,7 +5,7 @@
 		<p class="username-text" ng-controller="ModalUsernameCtrl as modal" ng-click="modal.open()">Change Screen Name</p>
 	</div>
 	
-	<section class="room-nav" ng-click="roomctrl.roomView.showSidebar()" ng-mouseleave="roomctrl.dynamicCss()">
+	<section class="room-nav" ng-click="roomctrl.roomView.showSidebar()">
 		
 		<div class="button-box">
 			<div class="button" ng-controller="ModalCtrl as modal" ng-click="modal.open()">New Room</div>
@@ -28,7 +28,7 @@
 	</section>	
 
 
-	<section class="active-room">
+	<section class="active-room" ng-click="roomctrl.dynamicCss()">
 		
 		<div class="logo-select-room" ng-show="!roomctrl.roomSelected"></div>
 		<div ng-show="roomctrl.roomSelected" class="active-room-title"><p class="room-title-text">{{ roomctrl.activeRoom.$value }}</p></div>
