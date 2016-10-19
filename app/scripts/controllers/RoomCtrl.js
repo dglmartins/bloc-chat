@@ -1,5 +1,5 @@
 (function() {
- 	function RoomCtrl($scope, $window, Room, Message, RoomView, $cookies) {
+ 	function RoomCtrl($scope, $window, Room, Message, RoomView, $cookies, $firebaseArray) {
 		
 		
 		this.room = Room;
@@ -39,11 +39,13 @@
 		
 		this.getMessages = function(roomId) {
 			this.messages = this.room.getMessages(roomId);
-		
+			this.messages.$watch(function(){
+				RoomView.autoScrollMessages();
+			});
 			RoomView.autoScrollMessages();
-		
-			
 		};
+		
+		
 		
 		this.sendMessage = function() {
 			var d = new Date();
@@ -53,9 +55,7 @@
 			var username = $cookies.get('blocChatCurrentUser');
 			this.message.send($scope.messageToSend, this.activeRoom.$id, dateTime, username);
 			$scope.messageToSend = "";
-			
-			RoomView.autoScrollMessages();
-			
+						
 		};
 		
 		
@@ -65,6 +65,6 @@
  
  	angular
 		.module('blocChat')
-		.controller('RoomCtrl', ['$scope', '$window', 'Room','Message','RoomView', '$cookies', RoomCtrl]);
+		.controller('RoomCtrl', ['$scope', '$window', 'Room','Message','RoomView', '$cookies','$firebaseArray', RoomCtrl]);
 	
  })();
