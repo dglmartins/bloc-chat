@@ -46,8 +46,11 @@
 		</div>
 		
 		<section ng-show="roomctrl.roomSelected"  class="send-message-container">
-			<textarea class="message-field" rows="2" placeholder="Type your message here..." ng-model="messageToSend"></textarea>
-			<div class="submit-message" ng-click="roomctrl.sendMessage();"></div>
+			<form ng-submit="roomctrl.sendMessage()">
+				<input class="message-field" placeholder="Type your message here..." ng-model="messageToSend">
+			</form>
+			
+			<div class="submit-message" ng-click="roomctrl.sendMessage()"></div>
 		</section>
 		
 	</section>
