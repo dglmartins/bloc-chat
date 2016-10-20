@@ -7,8 +7,14 @@
 		});
 		
 		$stateProvider
-			.state('chat', {
-			url: '/',
+			.state('login', {
+				url: '/',
+			 	//controller: 'LoginCtrl as login',
+				templateUrl: '/templates/login.html'
+		})
+				
+			.state('chatApp', {
+			url: '/chatApp',
 			templateUrl: '/templates/main.html'
 			
 		});
