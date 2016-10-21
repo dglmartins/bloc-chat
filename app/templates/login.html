@@ -7,25 +7,26 @@
 	<section class="login-screen">
 		<section class="login-form">
 			<div class="login-header">
-				<p class="login-title">Login or Create account</p>
+				<p class="login-title" ng-show="!auth.creatingNewUser">Sign in</p>
+				<p class="login-title" ng-show="auth.creatingNewUser">Create account</p>
 			</div>
 			<div class="login-body">
-				<form>
+				<form name="myform">
 				
-					<input class="login-input" type="email" placeholder="e-mail"><br>
-					<input class="login-input" type="password" placeholder="Password"><br>
-					<input class="login-input" type="email" placeholder="Screen name"><br>
+					<input class="login-input" type="text" placeholder="e-mail" ng-model="email" ng-required="true"><br>
+					<input class="login-input" type="password" placeholder="Password" ng-model="password" ng-required="true"><br>
+					<input class="login-input" ng-show="auth.creatingNewUser" type="text" placeholder="Screen name" ng-model="screenName" ng-required="true"><br>
+					<button class="login-button" ng-show="!auth.creatingNewUser" ng-click="myform.$valid && auth.signIn()">Sign in</button>
+					<div class="or" ng-show="!auth.creatingNewUser">OR</div>
+					<button class="login-button" type="button" ng-click="auth.toggleLogIn()" ng-show="!auth.creatingNewUser">New Account</button>
+					<button class="login-button" ng-show="auth.creatingNewUser" ng-click="myform.$valid && auth.createUser()" >Create Account</button>
+					<div class="or" ng-show="auth.creatingNewUser">OR</div>
+					<button class="login-button" type="button" ng-show="auth.creatingNewUser"ng-click="auth.toggleLogIn()">Back to Sign in</button>
+					
 		 		</form>
 
 			</div>
-			<div class="login-footer">
-				<div class="login-button-container">
-					<button class="login-button" type="button">Login</button>
-				</div>
-				<div class="login-button-container">
-					<button class="login-button" type="button">New Account</button>
-				</div>
-			</div>
+			
 		</section>
 		
 	</section>

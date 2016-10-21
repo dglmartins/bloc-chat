@@ -9,7 +9,7 @@
 		$stateProvider
 			.state('login', {
 				url: '/',
-			 	//controller: 'LoginCtrl as login',
+			 	controller: 'AuthCtrl as auth',
 				templateUrl: '/templates/login.html'
 		})
 				
