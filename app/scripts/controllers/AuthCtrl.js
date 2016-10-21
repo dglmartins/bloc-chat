@@ -40,6 +40,18 @@
 	
 		};
 		
+		
+		this.signIn = function() {
+			this.auth.$signInWithEmailAndPassword($scope.email, $scope.password).then(function(firebaseUser) {
+				$scope.message = "User created signed in with screen name: " + firebaseUser.displayName;
+					console.log($scope.message);
+			}).catch(function(error) {
+				alert(error);
+			});
+			
+			
+		};
+		
 	}
 	
 	angular
