@@ -7,17 +7,20 @@
 	<section class="login-screen">
 		<section class="login-form">
 			<div class="login-header">
-				<p class="login-title" ng-show="!auth.creatingNewUser">Sign in</p>
+				<p class="login-title" ng-show="!auth.creatingNewUser && !auth.forgotPassword">Sign in</p>
 				<p class="login-title" ng-show="auth.creatingNewUser">Create account</p>
 			</div>
-			<div class="login-body" ng-show="!auth.creatingNewUser">
+			<div class="login-body" ng-show="!auth.creatingNewUser &&!auth.forgotPassword">
 				<form name="signin">
 				
 					<input name="email" class="login-input" type="text" placeholder="e-mail" ng-model="email" ng-required="true"><br>
 					<input name="password "class="login-input" type="password" placeholder="Password" ng-model="password" ng-required="true"><br>
 					<button class="login-button" ng-click="signin.$valid && auth.signIn()">Sign in</button>
 					<div class="or">OR</div>
-					<button class="login-button" type="button" ng-click="auth.toggleLogIn()">New Account</button>
+					<button class="login-button" type="button" ng-click="auth.toggleLogIn()">New Account</button><br>
+					<div class="forgot-password" >
+						<a href="#" ng-click="auth.toggleForgotPassword()">Forgot Password</a>
+					</div>
 					
 		 		</form>
 			</div>
@@ -30,6 +33,16 @@
 					<button class="login-button" ng-click="createuser.$valid && auth.createUser()" >Create Account</button>
 					<div class="or">OR</div>
 					<button class="login-button" type="button" ng-click="auth.toggleLogIn()">Back to Sign in</button>
+					
+		 		</form>
+			</div>
+				<div class="login-body" ng-show="auth.forgotPassword">
+				<form name="forgotpass">
+				
+					<input name="email" class="login-input" type="text" placeholder="e-mail" ng-model="emailForReset" ng-required="true"><br>
+					<button class="login-button" ng-click="forgotpass.$valid && auth.resetPass()" >Reset password</button>
+					<div class="or">OR</div>
+					<button class="login-button" type="button" ng-click=" auth.toggleForgotPassword()">Back to Sign in</button>
 					
 		 		</form>
 			</div>

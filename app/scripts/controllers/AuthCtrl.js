@@ -6,6 +6,7 @@
 	
 		
 		this.creatingNewUser = false;
+		this.forgotPassword = false;
 		
 		this.toggleLogIn = function(){
 			if (this.creatingNewUser === false) {
@@ -14,6 +15,15 @@
 				this.creatingNewUser = false;
 			}
 		};
+		
+		this.toggleForgotPassword = function(){
+			if (this.forgotPassword === false) {
+				this.forgotPassword = true;
+			} else {
+				this.forgotPassword = false;
+			}
+		};
+		
 		this.auth.$onAuthStateChanged(function(firebaseUser) {
 			$scope.firebaseUser = firebaseUser;
 			if (firebaseUser) {
@@ -59,6 +69,15 @@
 			
 			
 		};
+		
+		this.resetPass = function() {
+			var emailAddress = $scope.emailForReset;	AuthFactory.$sendPasswordResetEmail(emailAddress).then(function() {
+				alert("Password reset email sent to " + emailAddress +"!" );
+			}).catch(function(error) {
+				alert("Error: " + error);
+			});
+		};
+			
 		
 	}
 	
