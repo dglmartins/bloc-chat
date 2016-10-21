@@ -2,7 +2,7 @@
 	
 	<div class="sidebar-title">
 		<p class="title-text">Bloc Chat</p>
-		<p class="username-text" ng-controller="ModalUsernameCtrl as modal" ng-click="modal.open()">Change Screen Name</p>
+		<p class="username-text" ng-click="roomctrl.signOut()"> {{ firebaseUser.displayName }}</p>
 	</div>
 	
 	<section class="room-nav" ng-click="roomctrl.roomView.showSidebar()">

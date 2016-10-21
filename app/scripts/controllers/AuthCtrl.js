@@ -1,7 +1,9 @@
 (function() {
-	function AuthCtrl($scope, AuthFactory) {
+	function AuthCtrl($scope, $state, AuthFactory) {
 		this.auth = AuthFactory;
-		console.log(this.auth);
+	
+	
+	
 		
 		this.creatingNewUser = false;
 		
@@ -14,6 +16,10 @@
 		};
 		this.auth.$onAuthStateChanged(function(firebaseUser) {
 			$scope.firebaseUser = firebaseUser;
+			if (firebaseUser) {
+				$state.go('chatApp');
+			}
+			
 				
 		});
 		
@@ -27,12 +33,12 @@
 					displayName: $scope.screenName
 				}).then(function() {
 					$scope.message = "User created with screen name: " + firebaseUser.displayName;
-					console.log($scope.message);
+				
 				}).catch(function(error){
 					alert(error);	
 				});	
 
-
+				$state.go('chatApp');
 			}).catch(function(error) {
 				alert(error);
 			});
@@ -44,7 +50,9 @@
 		this.signIn = function() {
 			this.auth.$signInWithEmailAndPassword($scope.email, $scope.password).then(function(firebaseUser) {
 				$scope.message = "User created signed in with screen name: " + firebaseUser.displayName;
-					console.log($scope.message);
+					
+				$state.go('chatApp');
+				
 			}).catch(function(error) {
 				alert(error);
 			});
@@ -56,7 +64,7 @@
 	
 	angular
 		.module('blocChat')
-		.controller('AuthCtrl',['$scope', 'AuthFactory', AuthCtrl]);
+		.controller('AuthCtrl',['$scope', '$state', 'AuthFactory', AuthCtrl]);
 	
 	
 	
