@@ -12,9 +12,10 @@
 .login-form {
 	overflow: auto;
 	position: relative;
-	width: 50%;
+	width: 90%;
+	max-width: 35em;
 	height: 20em;
-	margin-left: 25%;
+	margin: 0 auto;
 	margin-top: 8em;
 	background-color: #c4dfe6;
 	border-radius: 2%;
